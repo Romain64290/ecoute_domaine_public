@@ -1,16 +1,20 @@
 page-type_signalement {
 
+    //taille de l'image
 .item-md ion-thumbnail img{
     width: 107px;
     height: 70px;
     
+   
 }
 
+// suppression marge à gauche et arriere plan
 .item-md {
     padding-left: 0px;
     background: url(../../assets/img/maze2.png);  
 }
 
+// taille mini de la zone d'image
 .item-md ion-thumbnail {
     min-height: 70px;
 }
