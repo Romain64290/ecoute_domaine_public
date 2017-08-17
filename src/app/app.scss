@@ -14,3 +14,83 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.menu-header {
+    height: 170px;
+    padding: 5px 15px;
+    background-image: url('../assets/img/menu.jpg');
+    background-size: cover;
+    color: #fff;
+}
+.name {
+    margin-top: 110px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    color: #fff;
+  }
+ 
+  
+
+.item-md ion-icon[item-left], .item-md ion-icon[item-right], .item-md ion-icon[item-start], .item-md ion-icon[item-end] {
+    margin-left: 0;
+    margin-top: 11px;
+    margin-bottom: 10px;
+    color: #555;
+   
+}
+
+.item-md {
+    background: url('../assets/img/maze2.png');  
+}
+
+.content-md {
+    //background-color: #eee;    
+   background: url('../assets/img/maze2.png');  
+    }
+
+    body{
+        font-size: 16px;
+    }
+       
+     
+   
+       .toolbar-background-md {
+           border-color: #2c3e50;
+           background: #2c3e50;
+       }
+   
+       .toolbar-title-md {
+           color: #fff;
+       
+       }
+   
+       .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+           color: #fff;
+           
+       }
+   
+   
+       h2,h3,h4{
+           color: #2c3e50;
+       }
+   
+       p{
+           font-size:120%;line-height:1.2;
+           color:#555;
+       }
