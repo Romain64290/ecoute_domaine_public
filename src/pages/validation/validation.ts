@@ -13,13 +13,15 @@ export class ValidationPage {
   email:string;
   commentaire:string;
   idAnomalie:number;
+  uidPhoto:string;
 
-  constructor(public navCtrl: NavController ,private navParams:NavParams) {
+  constructor(public navCtrl: NavController,public navParams:NavParams) {
     this.nom= navParams.get('nom');
     this.prenom= navParams.get('prenom');
     this.email= navParams.get('email');
     this.commentaire= navParams.get('commentaire');
     this.idAnomalie= navParams.get('idAnomalie');
+    this.uidPhoto= navParams.get('uidPhoto');
 
   
 

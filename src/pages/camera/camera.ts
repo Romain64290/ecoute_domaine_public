@@ -11,14 +11,14 @@ export class CameraPage {
   idAnomalie:number;
   uidPhoto:string;
 
-  constructor(public navCtrl: NavController,private navParams:NavParams ) {
+  constructor(public navCtrl: NavController,public navParams:NavParams ) {
     this.idAnomalie= navParams.get('idAnomalie');
     this.uidPhoto= this.guid();
 
   }
 
   goSignalementPage(): void {
-    this.navCtrl.push(SignalementPage, {idAnomalie: this.idAnomalie});
+    this.navCtrl.push(SignalementPage, {idAnomalie: this.idAnomalie, uidPhoto:this.uidPhoto});
 
   }
 

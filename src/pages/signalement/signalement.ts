@@ -13,9 +13,11 @@ export class SignalementPage {
   email:string;
   commentaire:string;
   idAnomalie:number;
+  uidPhoto:string;
 
-  constructor(public navCtrl: NavController,private navParams:NavParams) {
+  constructor(public navCtrl: NavController,public navParams:NavParams) {
     this.idAnomalie= navParams.get('idAnomalie');
+    this.uidPhoto= navParams.get('uidPhoto');
   }
 
 sendForm(){
@@ -24,7 +26,8 @@ this.navCtrl.push(ValidationPage,{
   prenom:this.prenom,
   email:this.email,
   commentaire:this.commentaire,
-  idAnomalie:this.idAnomalie
+  idAnomalie:this.idAnomalie,
+  uidPhoto:this.uidPhoto
   });
   }
 }
