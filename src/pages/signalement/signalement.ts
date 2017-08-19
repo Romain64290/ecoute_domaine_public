@@ -12,10 +12,10 @@ export class SignalementPage {
   prenom:string;
   email:string;
   commentaire:string;
-  id:number;
+  idAnomalie:number;
 
   constructor(public navCtrl: NavController,private navParams:NavParams) {
-    this.id= navParams.get('id');
+    this.idAnomalie= navParams.get('idAnomalie');
   }
 
 sendForm(){
@@ -24,7 +24,7 @@ this.navCtrl.push(ValidationPage,{
   prenom:this.prenom,
   email:this.email,
   commentaire:this.commentaire,
-  id:this.id
+  idAnomalie:this.idAnomalie
   });
   }
 }

@@ -15,7 +15,7 @@ export class TypeSignalementPage {
   }
 
   goCameraPage(anomalieId){
-    this.navCtrl.push(CameraPage,{id: anomalieId});
+    this.navCtrl.push(CameraPage,{idAnomalie: anomalieId});
 
   }
 

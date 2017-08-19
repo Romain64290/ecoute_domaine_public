@@ -8,17 +8,17 @@ import { SignalementPage } from '../signalement/signalement';
 })
 export class CameraPage {
 
-  id:number;
+  idAnomalie:number;
   uidPhoto:string;
 
   constructor(public navCtrl: NavController,private navParams:NavParams ) {
-    this.id= navParams.get('id');
+    this.idAnomalie= navParams.get('idAnomalie');
     this.uidPhoto= this.guid();
 
   }
 
   goSignalementPage(): void {
-    this.navCtrl.push(SignalementPage, {id: this.id});
+    this.navCtrl.push(SignalementPage, {idAnomalie: this.idAnomalie});
 
   }
 
