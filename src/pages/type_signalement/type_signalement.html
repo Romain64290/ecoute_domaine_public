@@ -9,57 +9,13 @@
         <h4>Choisissez un type d'anomalie:</h4> <br>
 
           <ion-list>
-              <ion-item>
-                <ion-thumbnail item-start >
-                  <img src="https://efapau1.agglo-pau.fr/dist/img/signalement/feux-tricolore.jpg">
-                </ion-thumbnail>
-                <h2>Feu tricolore</h2>
-                <button (tap)="goCameraPage(4)" ion-button clear item-end>Choisir</button>
-              </ion-item>
-
-              <ion-item>
-                  <ion-thumbnail item-start>
-                    <img src="https://efapau1.agglo-pau.fr/dist/img/signalement/eclairage-public.jpg">
+              <ion-item *ngFor="let anomalie of anomalies">
+                  <ion-thumbnail item-start >
+                    <img src="https://efapau1.agglo-pau.fr/{{anomalie.photo}}">
                   </ion-thumbnail>
-                  <h2>Eclairage public</h2>
-                 <button (tap)="goCameraPage(3)" ion-button clear item-end>Choisir</button>
+                  <h2>{{anomalie.nom}}</h2>
+                  <button (tap)="goCameraPage(anomalie.id)" ion-button clear item-end>Choisir</button>
                 </ion-item>
-
-                <ion-item>
-                    <ion-thumbnail item-start>
-                      <img src="https://efapau1.agglo-pau.fr/dist/img/signalement/trou-voirie.jpg">
-                    </ion-thumbnail>
-                    <h2>Trou voirie</h2>
-                    <button (tap)="goCameraPage(6)" ion-button clear item-end>Choisir</button>
-                  </ion-item>
-
-                  <ion-item>
-                      <ion-thumbnail item-start>
-                        <img src="https://efapau1.agglo-pau.fr/dist/img/signalement/tags.jpg">
-                      </ion-thumbnail>
-                      <h2>Tags</h2>
-                      <button (tap)="goCameraPage(5)" ion-button clear item-end>Choisir</button>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-thumbnail item-start>
-                          <img src="https://efapau1.agglo-pau.fr/dist/img/signalement/depot-sauvage.jpg">
-                        </ion-thumbnail>
-                        <h2>Dépot sauvage</h2>
-                        <button (tap)="goCameraPage(2)" ion-button clear item-end>Choisir</button>
-                      </ion-item>
-    
-                      <ion-item>
-                          <ion-thumbnail item-start>
-                            <img src="https://efapau1.agglo-pau.fr/dist/img/signalement/autre.png">
-                          </ion-thumbnail>
-                          <h2>Autres</h2>
-                          <button (tap)="goCameraPage(1)" ion-button clear item-end>Choisir</button>
-                        </ion-item>
-
-            </ion-list>
-
-         
-      
-       
+          </ion-list>
+     
       </ion-content>
