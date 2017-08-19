@@ -11,7 +11,8 @@ page-type_signalement {
 // suppression marge à gauche et arriere plan
 .item-md {
     padding-left: 0px;
-    background: url(../../assets/img/maze2.png);  
+    background-color: #F3F3F3; 
+    //background: url(../../assets/img/maze2.png);  
 }
 
 // taille mini de la zone d'image
@@ -19,7 +20,7 @@ page-type_signalement {
     min-height: 70px;
 }
 
-
-
-
+[padding] h1:first-child, [padding] h2:first-child, [padding] h3:first-child, [padding] h4:first-child, [padding] h5:first-child, [padding] h6:first-child {
+    margin-top: 0rem;
+}
 }

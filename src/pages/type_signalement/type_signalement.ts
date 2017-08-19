@@ -8,12 +8,14 @@ import { CameraPage } from '../camera/camera';
 })
 export class TypeSignalementPage {
 
+  typeSignalement:number;
+
   constructor(public navCtrl: NavController) {
 
   }
 
-  goCameraPage(): void {
-    this.navCtrl.push(CameraPage);
+  goCameraPage(anomalieId){
+    this.navCtrl.push(CameraPage,{id: anomalieId});
 
   }
 

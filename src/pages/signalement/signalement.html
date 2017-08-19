@@ -10,26 +10,26 @@
             <ion-list>
                     
                       <ion-item>
-                        <ion-label floating>Votre Nom :</ion-label>
-                        <ion-input type="text"></ion-input>
+                        <ion-label color="primary" floating>Votre Nom :</ion-label>
+                        <ion-input type="text" [(ngModel)]="nom"></ion-input>
                       </ion-item>
                     
                       <ion-item>
-                        <ion-label floating>Votre Prénom :</ion-label>
-                        <ion-input type="text"></ion-input>
+                        <ion-label color="primary" floating>Votre Prénom :</ion-label>
+                        <ion-input type="text" [(ngModel)]="prenom"></ion-input>
                       </ion-item>
 
                       <ion-item>
-                            <ion-label floating>Votre Email :</ion-label>
-                            <ion-input type="email"></ion-input>
+                            <ion-label color="primary" floating>Votre Email :</ion-label>
+                            <ion-input type="email" [(ngModel)]="email"></ion-input>
                           </ion-item>
 
                           <ion-item>
-                                <ion-label floating>Commentaire :</ion-label>
-                                <ion-textarea></ion-textarea>
+                                <ion-label color="primary" floating>Commentaire :</ion-label>
+                                <ion-textarea [(ngModel)]="commentaire"></ion-textarea>
                               </ion-item>   
 
-                              <button id="sendbutton" ion-button round >Envoyer votre signalement !</button>
+                              <button id="sendbutton" ion-button round (tap)="sendForm()">Envoyer votre signalement !</button>
                     
                     </ion-list>
          

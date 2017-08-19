@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import{ValidationPage} from '../validation/validation';
 
 @Component({
   selector: 'page-signalement',
@@ -7,8 +8,23 @@ import { NavController } from 'ionic-angular';
 })
 export class SignalementPage {
 
-  constructor(public navCtrl: NavController) {
+  nom:string;
+  prenom:string;
+  email:string;
+  commentaire:string;
+  id:number;
 
+  constructor(public navCtrl: NavController,private navParams:NavParams) {
+    this.id= navParams.get('id');
   }
 
+sendForm(){
+this.navCtrl.push(ValidationPage,{
+  nom:this.nom,
+  prenom:this.prenom,
+  email:this.email,
+  commentaire:this.commentaire,
+  id:this.id
+  });
+  }
 }

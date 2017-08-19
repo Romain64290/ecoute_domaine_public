@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { SignalementPage } from '../signalement/signalement';
 
 @Component({
@@ -8,12 +8,15 @@ import { SignalementPage } from '../signalement/signalement';
 })
 export class CameraPage {
 
-  constructor(public navCtrl: NavController) {
+  id:number;
+
+  constructor(public navCtrl: NavController,private navParams:NavParams ) {
+    this.id= navParams.get('id');
 
   }
 
   goSignalementPage(): void {
-    this.navCtrl.push(SignalementPage);
+    this.navCtrl.push(SignalementPage, {id: this.id});
 
   }
 
