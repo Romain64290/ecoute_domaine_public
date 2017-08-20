@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import { CameraPage } from '../camera/camera';
 
 //api
@@ -12,9 +12,14 @@ import{TypeSignalementService} from '../../services/typesignalementapi.service';
 })
 export class TypeSignalementPage {
 
+  latitude:number;
+  longitude:number;
   anomalies:TypeSignalementApiGlobal;
 
-  constructor(public navCtrl: NavController,private typeSignalementService:TypeSignalementService) {
+  constructor(public navCtrl: NavController,private typeSignalementService:TypeSignalementService,public navParams:NavParams) {
+    this.longitude= navParams.get('longitude');
+    this.latitude= navParams.get('latitude');
+
     this.typeSignalementService.getObjects()
     .then(anomaliesfetched =>{
     this.anomalies=anomaliesfetched;
@@ -24,7 +29,7 @@ export class TypeSignalementPage {
   }
 
   goCameraPage(anomalieId){
-    this.navCtrl.push(CameraPage,{idAnomalie: anomalieId});
+    this.navCtrl.push(CameraPage,{idAnomalie: anomalieId,longitude:this.longitude,latitude:this.latitude});
 
   }
 

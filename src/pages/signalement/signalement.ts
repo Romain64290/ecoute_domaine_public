@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,Platform } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import{ValidationPage} from '../validation/validation';
-import { Geolocation } from '@ionic-native/geolocation';
+
 
 @Component({
   selector: 'page-signalement',
@@ -18,28 +18,16 @@ export class SignalementPage {
   latitude:number;
   longitude:number;
 
-  constructor(public navCtrl: NavController,public navParams:NavParams,public platform: Platform,private geolocation: Geolocation,) {
+  constructor(public navCtrl: NavController,public navParams:NavParams) {
     this.idAnomalie= navParams.get('idAnomalie');
     this.uidPhoto= navParams.get('uidPhoto');
+    this.longitude= navParams.get('longitude');
+    this.latitude= navParams.get('latitude');
 
-    platform.ready().then(() => {
-			this.localisation();
-		});
+  
 
   }
 
-
-localisation(){
-  this.geolocation.getCurrentPosition().then((resp) => {
-    this.latitude=resp.coords.latitude;
-    this.longitude=resp.coords.longitude
-    
-    
-
-   }).catch((error) => {
-     console.log('Error getting location', error);
-   });
-  }
 
 sendForm(){
 this.navCtrl.push(ValidationPage,{

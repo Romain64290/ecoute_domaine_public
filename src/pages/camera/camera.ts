@@ -10,15 +10,19 @@ export class CameraPage {
 
   idAnomalie:number;
   uidPhoto:string;
+  latitude:number;
+  longitude:number;
 
   constructor(public navCtrl: NavController,public navParams:NavParams ) {
     this.idAnomalie= navParams.get('idAnomalie');
     this.uidPhoto= this.guid();
+    this.longitude= navParams.get('longitude');
+    this.latitude= navParams.get('latitude');
 
   }
 
   goSignalementPage(): void {
-    this.navCtrl.push(SignalementPage, {idAnomalie: this.idAnomalie, uidPhoto:this.uidPhoto});
+    this.navCtrl.push(SignalementPage, {idAnomalie: this.idAnomalie, uidPhoto:this.uidPhoto,longitude:this.longitude,latitude:this.latitude});
 
   }
 
