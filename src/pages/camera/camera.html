@@ -7,34 +7,34 @@
       <ion-content padding>
 
           <h4>Prenez une photo de l'anomalie:</h4> <br>
-
+          <div *ngIf="!fileUriImage" >
 
 
           <br>
           <div align="center"><button ion-button round color="primary" (click)="takePicture()">
             Prendre en photo l'anomalie
-          </button></div>
-        
+          </button></div></div>
 
-        <!-- <div *ngIf=fileUriImage!='';> -->
+      
+
+        <!--<div *ngIf="fileUriImage" id="image-presente" >-->
             <div text-center>
               <ion-img width="{{pictureWidth}}" height="{{pictureHeight}}" src="{{fileUriImage}}"></ion-img>
             </div>
             <br><br>
-          </ion-content>
+                 <!-- </div> -->
+                </ion-content>
 
-          <ion-footer>
-
+          <ion-footer *ngIf="fileUriImage">
+          
             <div align="center"><br>
               <button ion-button round color="light" (click)="takePicture()">Refaire la photo</button> &nbsp;&nbsp;
               <button ion-button round color="primary" (tap)="goSignalementPage()">Envoyer</button>
 <br><br>
-            </div>
-
-       
+            </div>  
         
-        </ion-footer>
-         <!-- </div> -->
+          </ion-footer>
+        
 
 
 
