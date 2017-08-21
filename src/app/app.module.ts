@@ -18,6 +18,8 @@ import { ValidationPage } from '../pages/validation/validation';
 import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 
 //Api
 import{TypeSignalementService} from '../services/typesignalementapi.service';
@@ -54,6 +56,8 @@ import{TypeSignalementService} from '../services/typesignalementapi.service';
   providers: [
     TypeSignalementService,
     Geolocation,
+    Camera,
+    FileTransfer,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
