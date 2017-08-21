@@ -18,8 +18,8 @@ export class CameraPage {
   // variables pour definir taille de la photo
   pictureWidth: number;
   pictureHeight: number;
-  widthMargin: number = 50;
-  heightMargin: number = 175;
+  widthMargin: number = 75;
+  heightMargin: number = 75;
 
   // autres variables pour la photo
   fileUriImage: any;
