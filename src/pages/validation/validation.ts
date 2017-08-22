@@ -23,14 +23,6 @@ export class ValidationPage {
   latitude:number;
   retour:any;
 
-  signaleur = [{
-    nom: 'totololo',
-    prenom: '',
-    email: '',
-    type_signalement: 1,
-    coordonnees: "0.0, 0.0",
-    photo: "nomPhoto"
-  }];
 
   constructor(public navCtrl: NavController,public navParams:NavParams,public signalementService:SignalementService) {
     this.nom= navParams.get('nom');
@@ -43,7 +35,15 @@ export class ValidationPage {
     this.latitude= navParams.get('latitude');
 
     //this.signalementService.addObjects(this.signaleur);
-    this.retour=this.signalementService.addObjects(this.signaleur);
+    this.retour=this.signalementService.addObjects(
+      [{
+      nom: this.nom,
+      prenom: this.prenom,
+      email: this.email,
+      type_signalement: this.idAnomalie,
+      coordonnees: this.latitude,
+      photo: this.uidPhoto
+    }]);
 
   }
 
