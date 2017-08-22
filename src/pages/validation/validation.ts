@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 
+//api
+import{SignalementService} from '../../services/signalementapi.service';
 
 @Component({
   selector: 'page-validation',
@@ -19,8 +21,18 @@ export class ValidationPage {
   adresse:string;
   longitude:number;
   latitude:number;
+  retour:any;
 
-  constructor(public navCtrl: NavController,public navParams:NavParams) {
+  signaleur = [{
+    nom: 'totololo',
+    prenom: '',
+    email: '',
+    type_signalement: 1,
+    coordonnees: "0.0, 0.0",
+    photo: "nomPhoto"
+  }];
+
+  constructor(public navCtrl: NavController,public navParams:NavParams,public signalementService:SignalementService) {
     this.nom= navParams.get('nom');
     this.prenom= navParams.get('prenom');
     this.email= navParams.get('email');
@@ -30,7 +42,8 @@ export class ValidationPage {
     this.longitude= navParams.get('longitude');
     this.latitude= navParams.get('latitude');
 
-  
+    //this.signalementService.addObjects(this.signaleur);
+    this.retour=this.signalementService.addObjects(this.signaleur);
 
   }
 

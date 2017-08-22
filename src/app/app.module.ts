@@ -23,6 +23,7 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 
 //Api
 import{TypeSignalementService} from '../services/typesignalementapi.service';
+import{SignalementService} from '../services/signalementapi.service';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import{TypeSignalementService} from '../services/typesignalementapi.service';
   ],
   providers: [
     TypeSignalementService,
+    SignalementService,
     Geolocation,
     Camera,
     FileTransfer,
