@@ -10,22 +10,16 @@ import {Validators, FormBuilder, FormGroup } from '@angular/forms';
   selector: 'page-signalement',
   templateUrl: 'signalement.html'
 
-  
-
 })
 
 export class SignalementPage {
 
-  nom:string;
-  prenom:string;
-  email:string;
-  commentaire:string;
   idAnomalie:number;
   uidPhoto:string;
   latitude:number;
   longitude:number;
 
-  private slideOneForm : FormGroup;
+  private signalementForm : FormGroup;
   submitAttempt: boolean = false;
 
   constructor(public navCtrl: NavController,public navParams:NavParams,public alertCtrl: AlertController, public formBuilder: FormBuilder)
@@ -36,10 +30,12 @@ export class SignalementPage {
     this.longitude= navParams.get('longitude');
     this.latitude= navParams.get('latitude');
 
-    this.slideOneForm = formBuilder.group({
-      firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-      lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-      age: ['',Validators.required]
+    this.signalementForm = formBuilder.group({
+      nom: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      prenom: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      email: ['',Validators.required],
+      commentaire: ['']
+
   });
 
 //si on ne recupere pas la latitude (geolocalisation), on demande de mettre  l'adresse dans commentaire
@@ -49,19 +45,8 @@ export class SignalementPage {
 
   }
 
-  save(){
     
-       this.submitAttempt = true;
-    
-       if(this.slideOneForm.valid){
-        
-           console.log("success!")
-           console.log(this.slideOneForm.value.age);
-           this.nom=this.slideOneForm.value.age;
-        
-       }
-    
-   }
+   
 
   showAlert() {
     let alert = this.alertCtrl.create({
@@ -73,17 +58,22 @@ export class SignalementPage {
   }
 
 sendForm(){
+
+  this.submitAttempt = true;
+  
+     if(this.signalementForm.valid){
+      
 this.navCtrl.push(ValidationPage,{
-  nom:this.nom,
-  prenom:this.prenom,
-  email:this.email,
-  commentaire:this.commentaire,
+  nom:this.signalementForm.value.nom,
+  prenom:this.signalementForm.value.prenom,
+  email:this.signalementForm.value.email,
+  commentaire:this.signalementForm.value.commentaire,
   idAnomalie:this.idAnomalie,
   uidPhoto:this.uidPhoto,
   longitude:this.longitude,
   latitude:this.latitude
   });
   }
-
+}
 
 }

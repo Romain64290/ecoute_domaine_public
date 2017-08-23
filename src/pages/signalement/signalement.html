@@ -9,46 +9,51 @@
           <h4>Veuillez saisir vos coordonées:</h4> <br>
 
          
-          <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+          <p *ngIf="submitAttempt" style="color: #ea6153;">Veuillez remplir tous les champs signalés en rouge.</p>
           
              <ion-list no-lines>
           
-                 <form [formGroup]="slideOneForm">
+                 <form [formGroup]="signalementForm">
           
                      <ion-item>
-                         <ion-label floating>First Name</ion-label>
-                         <ion-input formControlName="firstName" type="text" [class.invalid]="!slideOneForm.controls.firstName.valid && (slideOneForm.controls.firstName.dirty || submitAttempt)"></ion-input>
+                         <ion-label floating>Nom</ion-label>
+                         <ion-input formControlName="nom" type="text" [class.invalid]="!signalementForm.controls.nom.valid && (signalementForm.controls.nom.dirty || submitAttempt)"></ion-input>
                      </ion-item>
           
-                     <ion-item *ngIf="!slideOneForm.controls.firstName.valid  && (slideOneForm.controls.firstName.dirty || submitAttempt)">
-                         <p>Please enter a valid name.</p>
-                     </ion-item>
-          
-                     <ion-item>
-                         <ion-label floating>Last Name</ion-label>
-                         <ion-input formControlName="lastName" type="text" [class.invalid]="!slideOneForm.controls.lastName.valid && (slideOneForm.controls.age.dirty || submitAttempt)"></ion-input>
-                     </ion-item>
-          
-                     <ion-item *ngIf="!slideOneForm.controls.lastName.valid  && (slideOneForm.controls.lastName.dirty || submitAttempt)">
-                         <p>Please enter a valid name.</p>
+                     <ion-item *ngIf="!signalementForm.controls.nom.valid  && (signalementForm.controls.nom.dirty || submitAttempt)">
+                         <p>veuillez saisir votre nom.</p>
                      </ion-item>
           
                      <ion-item>
-                         <ion-label floating>Age</ion-label>
-                         <ion-input formControlName="age" type="number" [class.invalid]="!slideOneForm.controls.age.valid && (slideOneForm.controls.age.dirty || submitAttempt)"></ion-input>
+                         <ion-label floating>Prenom</ion-label>
+                         <ion-input formControlName="prenom" type="text" [class.invalid]="!signalementForm.controls.prenom.valid && (signalementForm.controls.prenom.dirty || submitAttempt)"></ion-input>
                      </ion-item>
           
-                     <ion-item *ngIf="!slideOneForm.controls.age.valid  && (slideOneForm.controls.age.dirty || submitAttempt)">
-                         <p>Please enter a valid age.</p>
+                     <ion-item *ngIf="!signalementForm.controls.prenom.valid  && (signalementForm.controls.prenom.dirty || submitAttempt)">
+                         <p>veuillez saisir votre prénom.</p>
                      </ion-item>
+          
+                     <ion-item>
+                         <ion-label floating>Email</ion-label>
+                         <ion-input formControlName="email" type="email" [class.invalid]="!signalementForm.controls.email.valid && (signalementForm.controls.email.dirty || submitAttempt)"></ion-input>
+                     </ion-item>
+          
+                     <ion-item *ngIf="!signalementForm.controls.email.valid  && (signalementForm.controls.email.dirty || submitAttempt)">
+                         <p>Veuillez saisir votre email.</p>
+                     </ion-item>
+
+                    <ion-item>
+                        <ion-label floating>Commentaire</ion-label>
+                        <ion-textarea formControlName="commentaire"></ion-textarea>
+                    </ion-item>
           
                  </form>
           
              </ion-list>
           
-
-         <button ion-button full color="primary" (tap)="save()">Create Account!</button>
-                  
+<div align="center">
+         <button ion-button round color="primary" (tap)="sendForm()">Envoyer votre signalement !</button>
+</div>         
          
                 
        

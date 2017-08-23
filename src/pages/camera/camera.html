@@ -10,15 +10,18 @@
           <div *ngIf="!fileUriImage" >
 
               <br>
-          <br>
+          
+          <div text-center>
+              <!-- Attention à ne pas mettre le lien en relatif ../../assets -->
+              <ion-img  width="300" height="300" src="assets/img/takePhoto.png"></ion-img>
+            </div>
+            <br><br>
+
           <div align="center"><button ion-button round color="primary" (click)="takePicture()">
             Prendre en photo l'anomalie
           </button></div>
-        <br><br>
-          <div text-center>
-            <!-- Attention à ne pas mettre le lien en relatif ../../assets -->
-            <ion-img  width="300" height="300" src="assets/img/takePhoto.png"></ion-img>
-          </div>
+       
+         
         
         </div>
 
