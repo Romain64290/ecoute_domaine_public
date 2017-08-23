@@ -1,12 +1,19 @@
+//https://www.joshmorony.com/advanced-forms-validation-in-ionic-2/
+
 import { Component } from '@angular/core';
 import { NavController, NavParams,AlertController } from 'ionic-angular';
 import{ValidationPage} from '../validation/validation';
+import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
   selector: 'page-signalement',
   templateUrl: 'signalement.html'
+
+  
+
 })
+
 export class SignalementPage {
 
   nom:string;
@@ -18,11 +25,22 @@ export class SignalementPage {
   latitude:number;
   longitude:number;
 
-  constructor(public navCtrl: NavController,public navParams:NavParams,public alertCtrl: AlertController) {
+  private slideOneForm : FormGroup;
+  submitAttempt: boolean = false;
+
+  constructor(public navCtrl: NavController,public navParams:NavParams,public alertCtrl: AlertController, public formBuilder: FormBuilder)
+   {
+
     this.idAnomalie= navParams.get('idAnomalie');
     this.uidPhoto= navParams.get('uidPhoto');
     this.longitude= navParams.get('longitude');
     this.latitude= navParams.get('latitude');
+
+    this.slideOneForm = formBuilder.group({
+      firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      age: ['',Validators.required]
+  });
 
 //si on ne recupere pas la latitude (geolocalisation), on demande de mettre  l'adresse dans commentaire
   if (!this.latitude) {
@@ -30,6 +48,20 @@ export class SignalementPage {
     }
 
   }
+
+  save(){
+    
+       this.submitAttempt = true;
+    
+       if(this.slideOneForm.valid){
+        
+           console.log("success!")
+           console.log(this.slideOneForm.value.age);
+           this.nom=this.slideOneForm.value.age;
+        
+       }
+    
+   }
 
   showAlert() {
     let alert = this.alertCtrl.create({

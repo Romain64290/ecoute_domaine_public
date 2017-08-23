@@ -7,32 +7,49 @@
       <ion-content padding>
 
           <h4>Veuillez saisir vos coordonées:</h4> <br>
-            <ion-list>
-                    
-                      <ion-item>
-                        <ion-label color="primary" floating>Votre Nom :</ion-label>
-                        <ion-input type="text" [(ngModel)]="nom"></ion-input>
-                      </ion-item>
-                    
-                      <ion-item>
-                        <ion-label color="primary" floating>Votre Prénom :</ion-label>
-                        <ion-input type="text" [(ngModel)]="prenom"></ion-input>
-                      </ion-item>
 
-                      <ion-item>
-                            <ion-label color="primary" floating>Votre Email :</ion-label>
-                            <ion-input type="email" [(ngModel)]="email"></ion-input>
-                          </ion-item>
-
-                          <ion-item>
-                                <ion-label color="primary" floating>Commentaire :</ion-label>
-                                <ion-textarea [(ngModel)]="commentaire"></ion-textarea>
-                              </ion-item>   
-
-                              <button id="sendbutton" ion-button round (tap)="sendForm()">Envoyer votre signalement !</button>
-                    
-                    </ion-list>
          
-      
+          <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+          
+             <ion-list no-lines>
+          
+                 <form [formGroup]="slideOneForm">
+          
+                     <ion-item>
+                         <ion-label floating>First Name</ion-label>
+                         <ion-input formControlName="firstName" type="text" [class.invalid]="!slideOneForm.controls.firstName.valid && (slideOneForm.controls.firstName.dirty || submitAttempt)"></ion-input>
+                     </ion-item>
+          
+                     <ion-item *ngIf="!slideOneForm.controls.firstName.valid  && (slideOneForm.controls.firstName.dirty || submitAttempt)">
+                         <p>Please enter a valid name.</p>
+                     </ion-item>
+          
+                     <ion-item>
+                         <ion-label floating>Last Name</ion-label>
+                         <ion-input formControlName="lastName" type="text" [class.invalid]="!slideOneForm.controls.lastName.valid && (slideOneForm.controls.age.dirty || submitAttempt)"></ion-input>
+                     </ion-item>
+          
+                     <ion-item *ngIf="!slideOneForm.controls.lastName.valid  && (slideOneForm.controls.lastName.dirty || submitAttempt)">
+                         <p>Please enter a valid name.</p>
+                     </ion-item>
+          
+                     <ion-item>
+                         <ion-label floating>Age</ion-label>
+                         <ion-input formControlName="age" type="number" [class.invalid]="!slideOneForm.controls.age.valid && (slideOneForm.controls.age.dirty || submitAttempt)"></ion-input>
+                     </ion-item>
+          
+                     <ion-item *ngIf="!slideOneForm.controls.age.valid  && (slideOneForm.controls.age.dirty || submitAttempt)">
+                         <p>Please enter a valid age.</p>
+                     </ion-item>
+          
+                 </form>
+          
+             </ion-list>
+          
+
+         <button ion-button full color="primary" (tap)="save()">Create Account!</button>
+                  
+         
+                
        
       </ion-content>
