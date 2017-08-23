@@ -18,8 +18,8 @@ import { ValidationPage } from '../pages/validation/validation';
 import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Camera, CameraOptions } from '@ionic-native/camera';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { Camera} from '@ionic-native/camera';
+import { FileTransfer } from '@ionic-native/file-transfer';
 
 //Api
 import{TypeSignalementService} from '../services/typesignalementapi.service';
