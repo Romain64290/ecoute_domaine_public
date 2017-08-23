@@ -8,9 +8,7 @@ page-signalement {
 
     }
 
-    .ios, .md {
-        
-           page-home {
+  
         
                p {
                    font-size: 1em;
@@ -26,16 +24,38 @@ page-signalement {
                }
         
                ion-input, ion-select, ion-textarea {
-                   background-color: #161DC3;
-                   padding: 5px 10px;
+                   background-color: #fff;
+                   //padding: 5px 10px;
+                   
                }
         
                .invalid {
                    border: 1px solid #ea6153;
                }
         
-           }
+               .label-md[stacked], .label-md[floating] {
+                margin-left: 5px;
+               
+            }
+            
+            .item-md {
+                padding-left: 0;
+                }
+            
+            
+            .item-md.item-block .item-inner {
+                padding-right: 0px;
+            
+            }
+            
+            
+            .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+              
+                box-shadow: inset 0 0px 0 0 #f53d3d;
+            }
+            
+            
+                   } 
+            
         
-       }
-    }
-    
+        
