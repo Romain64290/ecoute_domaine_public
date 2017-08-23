@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
+import{HomePage} from '../home/home';
 
 //api
 import{SignalementService} from '../../services/signalementapi.service';
@@ -48,5 +49,10 @@ export class ValidationPage {
   }
 
 
+  goHome(){
+    //this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.popToRoot();
+      }
 
 }
