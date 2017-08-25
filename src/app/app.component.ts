@@ -8,6 +8,12 @@ import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 
+//plugin
+import { FCM } from '@ionic-native/fcm'; //https://www.djamware.com/post/58a1378480aca7386754130a/ionic-2-fcm-push-notification
+
+
+declare var FCMPlugin;
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -18,7 +24,7 @@ export class MyApp {
 
   pages: Array<{icon: string, title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private fcm: FCM) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -37,7 +43,28 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      FCMPlugin.getToken(
+        (t) => {
+          console.log(t);
+        },
+        (e) => {
+          console.log(e);
+        }
+      );
+      
+      FCMPlugin.onNotification(
+        (data) => {
+          console.log(data);
+        },
+        (e) => {
+          console.log(e);
+        }
+      );
+ 
     });
+
+    
   }
 
   openPage(page) {
@@ -45,4 +72,11 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+ 
+  
+
+
+
+
 }

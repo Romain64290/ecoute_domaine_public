@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "267018111614",
+    "firebase_url": "https://ecoute-domaine-public.firebaseio.com",
+    "project_id": "ecoute-domaine-public",
+    "storage_bucket": "ecoute-domaine-public.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267018111614:android:aa740d84c16a4a99",
+        "android_client_info": {
+          "package_name": "com.rtaldu.ecoutedomainepublic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267018111614-dcl0ad7eqiqou0220ihjb3h1vife8dfc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJgr4kD8h3WimaNsEajwb0YOdAVsNspBg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

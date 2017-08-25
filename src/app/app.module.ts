@@ -20,6 +20,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera} from '@ionic-native/camera';
 import { FileTransfer } from '@ionic-native/file-transfer';
+import { FCM } from '@ionic-native/fcm';
 
 //Api
 import{TypeSignalementService} from '../services/typesignalementapi.service';
@@ -62,6 +63,7 @@ import{SignalementService} from '../services/signalementapi.service';
     FileTransfer,
     StatusBar,
     SplashScreen,
+    FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
