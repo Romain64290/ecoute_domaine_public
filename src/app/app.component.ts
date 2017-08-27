@@ -44,6 +44,7 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
+      if (typeof FCMPlugin != 'undefined') {
       FCMPlugin.getToken(
         (t) => {
           console.log(t);
@@ -52,7 +53,7 @@ export class MyApp {
           console.log(e);
         }
       );
-      
+   
       FCMPlugin.onNotification(
         (data) => {
           console.log(data);
@@ -61,9 +62,9 @@ export class MyApp {
           console.log(e);
         }
       );
- 
+    }
     });
-
+  
     
   }
 
